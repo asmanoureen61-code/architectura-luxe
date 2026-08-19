@@ -99,15 +99,15 @@ export function Navbar() {
             transition={{ duration: 0.35 }}
             className="fixed inset-0 z-[60] bg-ink text-white lg:hidden"
           >
-            <div className="shell flex h-[72px] items-center justify-between">
-              <span className="display text-sm tracking-[0.24em]">{site.brandShort}</span>
+            <div className="shell flex h-14 items-center justify-between">
+              <span className="display text-xs tracking-[0.22em]">{site.brandShort}</span>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
-                className="flex h-10 w-10 items-center justify-center"
+                className="flex h-8 w-8 items-center justify-center"
               >
-                <X className="h-5 w-5" strokeWidth={1.5} />
+                <X className="h-[1.1rem] w-[1.1rem]" strokeWidth={1.5} />
               </button>
             </div>
             <nav className="shell mt-10 flex flex-col gap-6" aria-label="Mobile">
