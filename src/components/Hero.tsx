@@ -52,7 +52,7 @@ export function Hero() {
 
       <motion.div
         style={{ opacity: contentOpacity }}
-        className="shell relative flex h-full flex-col justify-end pb-10 pt-28 lg:justify-center lg:pb-[380px]"
+        className="shell relative flex h-full flex-col justify-end pb-10 pt-28 lg:justify-center lg:pb-40"
       >
         <div className="max-w-2xl">
           <motion.p
@@ -125,7 +125,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.9, ease }}
-          className="mt-10 hidden w-full max-w-[420px] border border-white/15 p-6 backdrop-blur-sm lg:absolute lg:bottom-12 lg:left-12 lg:mt-0 lg:block xl:left-[max(3rem,calc(50vw-44rem+3rem))]"
+          className="mt-10 hidden w-full max-w-[360px] border border-white/15 p-6 backdrop-blur-sm lg:absolute lg:top-32 lg:right-12 lg:mt-0 lg:block xl:right-[max(3rem,calc(50vw-44rem+3rem))]"
           style={{ backgroundColor: "rgba(15,15,15,0.88)" }}
         >
           <div className="flex items-start justify-between">
