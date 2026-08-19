@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import { heroSlides } from "@/data/plans";
