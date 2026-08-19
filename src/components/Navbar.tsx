@@ -32,17 +32,17 @@ export function Navbar() {
           solid ? "border-b border-border bg-background/90 backdrop-blur-md" : "bg-transparent"
         }`}
       >
-        <div className="shell flex h-[72px] items-center justify-between gap-6">
-          <Link to="/" className={`display text-sm tracking-[0.24em] ${text}`}>
+        <div className="shell flex h-14 items-center justify-between gap-4 sm:gap-6">
+          <Link to="/" className={`display text-xs tracking-[0.22em] ${text}`}>
             {site.brandShort}
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+          <nav className="hidden items-center gap-6 xl:gap-8 lg:flex" aria-label="Primary">
             {nav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className={`label-xs relative py-1 transition-opacity hover:opacity-60 ${text}`}
+                className={`label-xs relative py-1 text-[0.625rem] tracking-[0.14em] transition-opacity hover:opacity-60 ${text}`}
                 activeProps={{ "aria-current": "page" }}
                 activeOptions={{ exact: item.to === "/" }}
               >
@@ -53,24 +53,24 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <button
               type="button"
               aria-label="Search plans"
-              className={`hidden h-9 w-9 items-center justify-center transition-opacity hover:opacity-60 sm:flex ${text}`}
+              className={`hidden h-8 w-8 items-center justify-center transition-opacity hover:opacity-60 sm:flex ${text}`}
             >
-              <Search className="h-4 w-4" strokeWidth={1.5} />
+              <Search className="h-[0.875rem] w-[0.875rem]" strokeWidth={1.5} />
             </button>
             <button
               type="button"
               aria-label="Cart"
-              className={`hidden h-9 w-9 items-center justify-center transition-opacity hover:opacity-60 sm:flex ${text}`}
+              className={`hidden h-8 w-8 items-center justify-center transition-opacity hover:opacity-60 sm:flex ${text}`}
             >
-              <ShoppingBag className="h-4 w-4" strokeWidth={1.5} />
+              <ShoppingBag className="h-[0.875rem] w-[0.875rem]" strokeWidth={1.5} />
             </button>
             <Link
               to="/plans"
-              className={`label-xs hidden border px-5 py-3 transition-colors lg:inline-block ${
+              className={`label-xs hidden border px-4 py-2 text-[0.6rem] tracking-[0.16em] transition-colors lg:inline-block ${
                 solid
                   ? "border-ink bg-ink text-white hover:bg-accent hover:border-accent"
                   : "border-white/70 text-white hover:bg-white hover:text-ink"
@@ -82,9 +82,9 @@ export function Navbar() {
               type="button"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
-              className={`flex h-10 w-10 items-center justify-center lg:hidden ${text}`}
+              className={`flex h-8 w-8 items-center justify-center lg:hidden ${text}`}
             >
-              <Menu className="h-5 w-5" strokeWidth={1.5} />
+              <Menu className="h-[1.1rem] w-[1.1rem]" strokeWidth={1.5} />
             </button>
           </div>
         </div>
