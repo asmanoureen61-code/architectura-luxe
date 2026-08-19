@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import { heroSlides } from "@/data/plans";
 import { FloorPlanGlyph } from "./FloorPlanGlyph";
@@ -18,6 +18,13 @@ export function Hero() {
 
   const go = (dir: number) =>
     setIndex((i) => (i + dir + heroSlides.length) % heroSlides.length);
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setIndex((i) => (i + 1) % heroSlides.length);
+    }, 6000);
+    return () => clearInterval(t);
+  }, [index]);
 
   return (
     <section className="relative h-[94vh] min-h-[640px] w-full overflow-hidden bg-ink text-white">
