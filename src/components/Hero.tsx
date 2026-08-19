@@ -64,7 +64,7 @@ export function Hero() {
             {slide.collection} · Plan {slide.planId}
           </motion.p>
 
-          <h1 className="display mt-5 text-[clamp(2.2rem,5.2vw,5.2rem)] text-white">
+          <h1 className="display mt-5 text-[clamp(2rem,4.2vw,4.2rem)] text-white">
             {headline.map((line, i) => (
               <span key={line} className="block overflow-hidden">
                 <motion.span
