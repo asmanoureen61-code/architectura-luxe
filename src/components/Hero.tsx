@@ -22,7 +22,7 @@ export function Hero() {
   useEffect(() => {
     const t = setInterval(() => {
       setIndex((i) => (i + 1) % heroSlides.length);
-    }, 6000);
+    }, 2000);
     return () => clearInterval(t);
   }, [index]);
 
