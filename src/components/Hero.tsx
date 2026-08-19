@@ -16,9 +16,6 @@ export function Hero() {
   const imageScale = useTransform(scrollY, [0, 700], [1, 1.12]);
   const contentOpacity = useTransform(scrollY, [0, 420], [1, 0]);
 
-  const go = (dir: number) =>
-    setIndex((i) => (i + dir + heroSlides.length) % heroSlides.length);
-
   useEffect(() => {
     const t = setInterval(() => {
       setIndex((i) => (i + 1) % heroSlides.length);
