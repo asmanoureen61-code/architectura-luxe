@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import { heroSlides } from "@/data/plans";
@@ -15,9 +15,6 @@ export function Hero() {
   const { scrollY } = useScroll();
   const imageScale = useTransform(scrollY, [0, 700], [1, 1.12]);
   const contentOpacity = useTransform(scrollY, [0, 420], [1, 0]);
-
-  const go = (dir: number) =>
-    setIndex((i) => (i + dir + heroSlides.length) % heroSlides.length);
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -193,45 +190,6 @@ export function Hero() {
             ))}
           </dl>
 
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => go(-1)}
-              aria-label="Previous project"
-              className="flex h-9 w-9 items-center justify-center border border-white/25 text-white transition-colors hover:bg-white hover:text-ink"
-            >
-              <ChevronLeft className="h-4 w-4" strokeWidth={1.5} />
-            </button>
-            {heroSlides.map((s, i) => (
-              <button
-                key={s.slug}
-                type="button"
-                onClick={() => setIndex(i)}
-                aria-label={`Show ${s.name}`}
-                aria-pressed={i === index}
-                className={`h-14 w-20 overflow-hidden border transition-all duration-300 ${
-                  i === index ? "border-white" : "border-white/25 opacity-55 hover:opacity-90"
-                }`}
-              >
-                <img
-                  src={s.image}
-                  alt={s.name}
-                  loading="lazy"
-                  width={160}
-                  height={112}
-                  className="h-full w-full object-cover"
-                />
-              </button>
-            ))}
-            <button
-              type="button"
-              onClick={() => go(1)}
-              aria-label="Next project"
-              className="flex h-9 w-9 items-center justify-center border border-white/25 text-white transition-colors hover:bg-white hover:text-ink"
-            >
-              <ChevronRight className="h-4 w-4" strokeWidth={1.5} />
-            </button>
-          </div>
         </motion.div>
       </motion.div>
     </section>
